@@ -29,12 +29,13 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const SizedBox(height: 30),
+              const SizedBox(height: 50),
               FlipCard(
                   fill: Fill.fillFront,
                   direction: FlipDirection.HORIZONTAL,
@@ -47,22 +48,22 @@ class _HomePageState extends State<HomePage> {
                     print('isFront: $isFront');
                   },
                   front: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    padding: const EdgeInsets.symmetric(horizontal: 1),
                     child: buildCreditCard(
                       color: kDarkBlue,
                       cardExpiration: cardExpiryDateController.text.isEmpty
-                          ? "08/2022"
+                          ? "12/2023"
                           : cardExpiryDateController.text,
                       cardHolder: cardHolderNameController.text.isEmpty
-                          ? "Card Holder"
+                          ? "Transferencias"
                           : cardHolderNameController.text.toUpperCase(),
                       cardNumber: cardNumberController.text.isEmpty
-                          ? "XXXX XXXX XXXX XXXX"
+                          ? "4766 8412 5678 9012"
                           : cardNumberController.text,
                     ),
                   ),
                   back: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    padding: const EdgeInsets.symmetric(horizontal: 17),
                     child: Card(
                       elevation: 4.0,
                       color: kDarkBlue,
@@ -81,7 +82,7 @@ class _HomePageState extends State<HomePage> {
                             const Text(
                               'https://www.paypal.com',
                               style: TextStyle(
-                                color: Colors.white54,
+                                color: Color(0x8a000000),
                                 fontSize: 11,
                               ),
                             ),
@@ -89,7 +90,7 @@ class _HomePageState extends State<HomePage> {
                               height: 45,
                               width: MediaQuery.of(context).size.width / 1.2,
                               decoration: BoxDecoration(
-                                color: Colors.white.withOpacity(0.2),
+                                color: Colors.white.withOpacity(0),
                                 borderRadius: BorderRadius.circular(5),
                               ),
                             ),
@@ -104,11 +105,11 @@ class _HomePageState extends State<HomePage> {
                                     padding: const EdgeInsets.all(8.0),
                                     child: Text(
                                       cardCvvController.text.isEmpty
-                                          ? "322"
+                                          ? "256"
                                           : cardCvvController.text,
                                       style: const TextStyle(
                                         color: Colors.black,
-                                        fontSize: 21,
+                                        fontSize: 20,
                                       ),
                                     ),
                                   ),
@@ -117,10 +118,10 @@ class _HomePageState extends State<HomePage> {
                             ),
                             const SizedBox(height: 10),
                             const Text(
-                              'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.',
+                              'Esta targeta no es de adorno es pa que le metas dinero',
                               style: TextStyle(
-                                color: Colors.white54,
-                                fontSize: 11,
+                                color: Color(0x8a000000),
+                                fontSize: 20,
                               ),
                               textAlign: TextAlign.center,
                             ),
@@ -134,7 +135,7 @@ class _HomePageState extends State<HomePage> {
                 height: 55,
                 width: MediaQuery.of(context).size.width / 1.12,
                 decoration: BoxDecoration(
-                  color: Colors.grey[200],
+                  color: Color(0xffffffff),
                   borderRadius: BorderRadius.circular(15),
                 ),
                 child: TextFormField(
@@ -144,14 +145,14 @@ class _HomePageState extends State<HomePage> {
                     border: InputBorder.none,
                     contentPadding:
                         EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-                    hintText: 'Card Number',
+                    hintText: 'Numero de targeta',
                     hintStyle: TextStyle(
-                      color: Colors.grey,
+                      color: Color(0xff000000),
                       fontSize: 16,
                     ),
                     prefixIcon: Icon(
                       Icons.credit_card,
-                      color: Colors.grey,
+                      color: Color(0xff000000),
                     ),
                   ),
                   inputFormatters: [
@@ -177,7 +178,7 @@ class _HomePageState extends State<HomePage> {
                 height: 55,
                 width: MediaQuery.of(context).size.width / 1.12,
                 decoration: BoxDecoration(
-                  color: Colors.grey[200],
+                  color: Color(0xffffffff),
                   borderRadius: BorderRadius.circular(15),
                 ),
                 child: TextFormField(
@@ -187,14 +188,14 @@ class _HomePageState extends State<HomePage> {
                     border: InputBorder.none,
                     contentPadding:
                         EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-                    hintText: 'Full Name',
+                    hintText: 'Nombre completo',
                     hintStyle: TextStyle(
-                      color: Colors.grey,
+                      color: Color(0xff000000),
                       fontSize: 16,
                     ),
                     prefixIcon: Icon(
                       Icons.person,
-                      color: Colors.grey,
+                      color: Color(0xff000000),
                     ),
                   ),
                   onChanged: (value) {
@@ -217,7 +218,7 @@ class _HomePageState extends State<HomePage> {
                     height: 55,
                     width: MediaQuery.of(context).size.width / 2.4,
                     decoration: BoxDecoration(
-                      color: Colors.grey[200],
+                      color: Color(0xffffffff),
                       borderRadius: BorderRadius.circular(15),
                     ),
                     child: TextFormField(
@@ -229,12 +230,12 @@ class _HomePageState extends State<HomePage> {
                             EdgeInsets.symmetric(horizontal: 20, vertical: 15),
                         hintText: 'MM/YY',
                         hintStyle: TextStyle(
-                          color: Colors.grey,
+                          color: Color(0xff000000),
                           fontSize: 16,
                         ),
                         prefixIcon: Icon(
                           Icons.calendar_today,
-                          color: Colors.grey,
+                          color: Color(0xff000000),
                         ),
                       ),
                       inputFormatters: [
@@ -260,7 +261,7 @@ class _HomePageState extends State<HomePage> {
                     height: 55,
                     width: MediaQuery.of(context).size.width / 2.4,
                     decoration: BoxDecoration(
-                      color: Colors.grey[200],
+                      color: Color(0xffffffff),
                       borderRadius: BorderRadius.circular(15),
                     ),
                     child: TextFormField(
@@ -272,12 +273,12 @@ class _HomePageState extends State<HomePage> {
                             EdgeInsets.symmetric(horizontal: 20, vertical: 15),
                         hintText: 'CVV',
                         hintStyle: TextStyle(
-                          color: Colors.grey,
+                          color: Color(0xff000000),
                           fontSize: 16,
                         ),
                         prefixIcon: Icon(
                           Icons.lock,
-                          color: Colors.grey,
+                          color: Color(0xff000000),
                         ),
                       ),
                       inputFormatters: [
@@ -310,7 +311,7 @@ class _HomePageState extends State<HomePage> {
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   foregroundColor: Colors.white,
-                  backgroundColor: Colors.deepPurpleAccent,
+                  backgroundColor: Color(0xffa081f4),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
                   ),

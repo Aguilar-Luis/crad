@@ -32,9 +32,9 @@ Card buildCreditCard({
                 ),
               ),
               Image.asset(
-                "assets/logos/mastercard.png",
-                height: 60,
-                width: 60,
+                "assets/logos/nu.png",
+                height: 90,
+                width: 90,
               ),
             ],
           ),
@@ -69,7 +69,7 @@ Card buildCreditCard({
                 label: 'CARDHOLDER',
                 value: cardHolder,
               ),
-              buildDetailsBlock(label: 'VALID THRU', value: cardExpiration),
+              buildDetailsBlock(label: 'VALIDA HASTA', value: cardExpiration),
             ],
           ),
         ],
@@ -85,7 +85,9 @@ Column buildDetailsBlock({required String label, required String value}) {
       Text(
         label,
         style: const TextStyle(
-            color: Colors.grey, fontSize: 10, fontWeight: FontWeight.bold),
+            color: Color(0xff313131),
+            fontSize: 10,
+            fontWeight: FontWeight.bold),
       ),
       Text(
         value,
